@@ -1,14 +1,26 @@
 import React from 'react';
-import {Button, Form, Input} from "antd-mobile";
+import {Button, Form, Input, Toast} from "antd-mobile";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+
+    const navigate = useNavigate()
 
     //提交表单
     const onFinish = (values) => {
         axios.post("/api/login", values)
             .then(res => {
-                console.log(res.data)
+                if (res.data === "登陆成功") {
+                    Toast.show({
+                        icon: 'success',
+                        content: '登录成功',
+                        duration: 1000,
+                        afterClose: () => {
+                            navigate("/")
+                        }
+                    })
+                }
             })
     }
 
