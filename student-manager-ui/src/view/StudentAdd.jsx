@@ -14,11 +14,16 @@ const StudentAdd = () => {
         //请求后端
         axios.post("/api/student/save", value)
             .then(res => {
-                if (res.data) {
+                if (res.data === true) {
                     //弹出提示
                     Toast.show({
                         icon: 'success',
                         content: '添加成功',
+                    })
+                } else {
+                    Toast.show({
+                        icon: 'fail',
+                        content: '无权限',
                     })
                 }
             })

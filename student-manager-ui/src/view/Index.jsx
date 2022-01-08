@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Form, Input, Space} from "antd-mobile";
+import {Button, Form, Input, Space, Toast} from "antd-mobile";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import StudentList from "./StudentList";
@@ -9,7 +9,7 @@ const Index = () => {
     const navigate = useNavigate()
 
     //学生列表
-    const [students,setStudents] = useState([])
+    const [students, setStudents] = useState([])
 
     //添加学生信息
     const addClick = () => {
@@ -22,8 +22,15 @@ const Index = () => {
         axios.get("/api/student/list", {
             params: value
         }).then(res => {
-            //更新学生列表数据
-            setStudents(res.data)
+            if (res.data === "无权限") {
+                Toast.show({
+                    icon: 'fail',
+                    content: '无权限',
+                })
+            } else {
+                //更新学生列表数据
+                setStudents(res.data)
+            }
         })
     }
 
