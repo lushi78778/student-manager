@@ -4,13 +4,18 @@
 1. 根据学院、班级、学号、姓名动态模糊查询列表
 2. 添加学生信息
 3. 修改学生信息
+4. 登录验证
+5. 权限验证
 
 ## 二、技术选型
 ### 后端
 1. Spring Boot 2.6.2
-2. Spring Data JPA 2.6.2
-3. Lombok 1.18.22
-4. Maven 3.8.1
+2. Spring Data JPA 2.6.0
+3. Spring Seucrity 5.6.1
+4. Spring Session 2.6.1
+5. Spring Data Redis 2.6.0
+6. Lombok 1.18.22
+7. Maven 3.8.1
 
 ### 前端
 1. [Vite 2.7.2](https://vitejs.cn/) —— 构建项目
@@ -22,11 +27,13 @@
 
 ### 数据库
 1. MySQL 8.0.27
+2. Redis 6.2.6
 
 ### 开发工具
 - IntelliJ IDEA 2021.3
 - WebStorm 2021.3
 - Navicat Premium 15
+- Another Redis Desktop Manager
 
 ## 三、安装方法
 ### 项目结构
