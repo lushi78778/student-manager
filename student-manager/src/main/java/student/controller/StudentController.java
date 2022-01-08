@@ -23,10 +23,14 @@ public class StudentController {
     @Resource
     private StudentDao studentDao;
 
+    /**
+     * 动态模糊查询学生列表
+     *
+     * @param param 查询参数
+     * @return Student集合对象
+     */
     @GetMapping("/list")
     public List<Student> list(Student param) {
-        //分页对象
-//        Pageable pageable = PageRequest.of(page, size);
         //查询条件
         Specification<Student> specification = (root, query, builder) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -48,6 +52,12 @@ public class StudentController {
         return studentDao.findAll(specification);
     }
 
+    /**
+     * 添加/修改学生信息
+     *
+     * @param student Student对象
+     * @return true/false
+     */
     @PostMapping("/save")
     public boolean save(@RequestBody Student student) {
         if (student.getId() != null) {
@@ -58,11 +68,22 @@ public class StudentController {
         return true;
     }
 
+    /**
+     * 查询学院列表
+     *
+     * @return 学院集合对象
+     */
     @GetMapping("/colleges")
     public List<String> colleges() {
         return studentDao.listColleges();
     }
 
+    /**
+     * 根据学院查询班级列表
+     *
+     * @param collegeName 学院名称
+     * @return 班级集合对象
+     */
     @GetMapping("/classes")
     public List<String> classes(String collegeName) {
         return studentDao.listClasses(collegeName);
