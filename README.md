@@ -53,3 +53,22 @@ student-manager
 3. 在前端目录里执行`yarn`或`npm install`安装相关依赖
 4. 后端运行`StudentManagerApplication.java`启动
 5. 前端运行`yarn dev`或`npm run dev`启动
+
+## 四、效果预览
+
+<table style="border:0">
+    <tr>
+        <td>
+            <img src="https://s2.loli.net/2022/01/09/1OA7FeaYMbVRTZs.png" style="width:300px;"/>
+        </td>
+        <td>
+            <img src="https://s2.loli.net/2022/01/09/8psHjLtBwuaSmO1.png" style="width:300px;"/>
+        </td>
+        <td>
+            <img src="https://s2.loli.net/2022/01/09/aYFXbS7RcdnT5WB.png" style="width:300px"/>
+        </td>
+        <td>
+            <img src="https://s2.loli.net/2022/01/09/Zm3MUda8x2ps9PO.png" style="width:300px"/>
+        </td>
+    </tr>
+</table>
