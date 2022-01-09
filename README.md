@@ -55,20 +55,7 @@ student-manager
 5. 前端运行`yarn dev`或`npm run dev`启动
 
 ## 四、效果预览
-
-<table style="border:0">
-    <tr>
-        <td>
-            <img src="https://s2.loli.net/2022/01/09/1OA7FeaYMbVRTZs.png" style="width:300px;"/>
-        </td>
-        <td>
-            <img src="https://s2.loli.net/2022/01/09/8psHjLtBwuaSmO1.png" style="width:300px;"/>
-        </td>
-        <td>
-            <img src="https://s2.loli.net/2022/01/09/aYFXbS7RcdnT5WB.png" style="width:300px"/>
-        </td>
-        <td>
-            <img src="https://s2.loli.net/2022/01/09/Zm3MUda8x2ps9PO.png" style="width:300px"/>
-        </td>
-    </tr>
-</table>
+<a href="https://sm.ms/image/1OA7FeaYMbVRTZs" target="_blank"><img src="https://s2.loli.net/2022/01/09/1OA7FeaYMbVRTZs.png" alt="login.png" style="width:350px;"></a>
+<a href="https://sm.ms/image/8psHjLtBwuaSmO1" target="_blank"><img src="https://s2.loli.net/2022/01/09/8psHjLtBwuaSmO1.png" alt="list.png" style="width:350px"></a>
+<a href="https://sm.ms/image/aYFXbS7RcdnT5WB" target="_blank"><img src="https://s2.loli.net/2022/01/09/aYFXbS7RcdnT5WB.png" alt="edit.png" style="width:350px"></a>
+<a href="https://sm.ms/image/Zm3MUda8x2ps9PO" target="_blank"><img src="https://s2.loli.net/2022/01/09/Zm3MUda8x2ps9PO.png" alt="add.png" style="width:350px"></a>     
