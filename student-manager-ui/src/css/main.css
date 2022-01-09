@@ -1,3 +1,16 @@
 body {
-    margin: 0
+    margin: 0;
+    background-color: rgb(245, 247, 250);
+}
+
+@font-face {
+    font-family: HYZY;
+    src: url('../font/HYZhengYuan-55W.ttf');
+}
+
+h1, h2, h3, h4, h5, h6,
+p, div,
+span, label, input, button,
+ul, li {
+    font-family: HYZY, serif;
 }

@@ -1,7 +1,9 @@
 import React from 'react';
-import {Button, Form, Input, Toast} from "antd-mobile";
+import {Button, Form, Image, Input, Toast} from "antd-mobile";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import style from '/src/css/login.module.css'
+import Logo from '/src/image/logo.png'
 
 const Login = () => {
 
@@ -25,20 +27,26 @@ const Login = () => {
     }
 
     return (
-        <Form onFinish={onFinish}
-              layout='horizontal'
-              footer={
-                  <Button block type='submit' color='primary'>提交</Button>
-              }>
+        <div>
+            <div className={style.logo}>
+                <Image src={Logo}/>
+                <h1>学生信息管理</h1>
+            </div>
+            <Form onFinish={onFinish}
+                  layout='horizontal'
+                  footer={
+                      <Button block type='submit' color='primary'>登录</Button>
+                  }>
+                <Form.Item name='username' label='账号'>
+                    <Input placeholder='请输入账号' clearable/>
+                </Form.Item>
 
-            <Form.Item name='username' label='账号'>
-                <Input placeholder='请输入账号' clearable/>
-            </Form.Item>
+                <Form.Item name='password' label='密码'>
+                    <Input type="password" placeholder='请输入密码' clearable/>
+                </Form.Item>
+            </Form>
+        </div>
 
-            <Form.Item name='password' label='密码'>
-                <Input type="password" placeholder='请输入密码' clearable/>
-            </Form.Item>
-        </Form>
     );
 };
 
