@@ -13,7 +13,7 @@ const Login = () => {
     const onFinish = (values) => {
         axios.post("/api/login", values)
             .then(res => {
-                if (res.data === "登陆成功") {
+                if (res.data.code === 1000) {
                     Toast.show({
                         icon: 'success',
                         content: '登录成功',
@@ -23,6 +23,13 @@ const Login = () => {
                         }
                     })
                 }
+            })
+            .catch(e => {
+                Toast.show({
+                    icon: 'fail',
+                    content: '登录失败',
+                    duration: 1000
+                })
             })
     }
 

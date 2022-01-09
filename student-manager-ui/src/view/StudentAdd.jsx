@@ -20,7 +20,7 @@ const StudentAdd = () => {
                         icon: 'success',
                         content: '添加成功',
                     })
-                } else {
+                } else if (res.data.code === 1010) {
                     Toast.show({
                         icon: 'fail',
                         content: '无权限',

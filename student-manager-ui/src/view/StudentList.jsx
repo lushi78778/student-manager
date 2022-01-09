@@ -3,7 +3,7 @@ import {List, Space, Tag} from "antd-mobile";
 import {UserContactOutline} from "antd-mobile-icons";
 import {useNavigate} from 'react-router-dom'
 import {useDispatch} from "react-redux";
-import studentSlice from "../store/student";
+import studentSlice from "/src/store/student";
 import style from '/src/css/student.module.css'
 
 //列表项右侧标签

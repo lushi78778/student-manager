@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Button, Form, Input, Picker, Switch, Toast} from "antd-mobile"
 import {useSelector} from "react-redux";
-import Top from "../component/Top";
+import Top from "/src/component/Top";
 import axios from "axios";
 
 const StudentEdit = () => {
@@ -31,7 +31,7 @@ const StudentEdit = () => {
                         icon: 'success',
                         content: '修改成功',
                     })
-                } else {
+                } else if (res.data.code === 1010) {
                     Toast.show({
                         icon: 'fail',
                         content: '无权限',

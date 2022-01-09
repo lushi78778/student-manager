@@ -22,7 +22,7 @@ const Index = () => {
         axios.get("/api/student/list", {
             params: value
         }).then(res => {
-            if (res.data === "无权限") {
+            if (res.data.code === 1010) {
                 Toast.show({
                     icon: 'fail',
                     content: '无权限',

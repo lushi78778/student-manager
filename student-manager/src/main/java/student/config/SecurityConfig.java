@@ -10,8 +10,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import student.bean.RetCode;
 import student.entity.User;
 import student.filter.LoginFilter;
+import student.util.JsonUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -35,12 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             User user = (User) authentication.getPrincipal();
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            response.setContentType("application/json");
-            response.setCharacterEncoding("utf-8");
-            PrintWriter writer = response.getWriter();
-            writer.write("登陆成功");
-            writer.flush();
-            writer.close();
+            JsonUtil.response(response, RetCode.LOGIN_SUCCESS);
         });
         loginFilter.setAuthenticationManager(authenticationManager());
         return loginFilter;
@@ -73,21 +70,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.exceptionHandling()
                 //未登录
                 .authenticationEntryPoint((request, response, e) -> {
-                    response.setContentType("application/json");
-                    response.setCharacterEncoding("utf-8");
-                    PrintWriter writer = response.getWriter();
-                    writer.write("未登录");
-                    writer.flush();
-                    writer.close();
+                    JsonUtil.response(response, RetCode.NO_LOGGED);
                 })
                 //无权限
                 .accessDeniedHandler((request, response, e) -> {
-                    response.setContentType("application/json");
-                    response.setCharacterEncoding("utf-8");
-                    PrintWriter writer = response.getWriter();
-                    writer.write("无权限");
-                    writer.flush();
-                    writer.close();
+                    JsonUtil.response(response, RetCode.PERMISSION_DENIED);
                 });
         //JSON登录
         http.addFilterAt(loginFilter(), UsernamePasswordAuthenticationFilter.class);
